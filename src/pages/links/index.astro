@@ -8,6 +8,7 @@ import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
 
 const headings = [
+  { depth: 2, slug: 'professional', text: 'Professional' },
   { depth: 2, slug: 'common-links', text: 'Common Links' },
   { depth: 2, slug: 'special-links', text: 'Special Links' },
   { depth: 2, slug: 'apply-links', text: 'Apply Links' }
@@ -18,21 +19,61 @@ const linksConf = config.integ.links
 ---
 
 <PageLayout title='Links' {headings} info='/links'>
-  <p>怎么可能有顺序呢，当然是随机的~</p>
+  <p>Feel free to connect with me professionally or check out these other interesting links.</p>
+  
+  <h2 id='professional'>Professional</h2>
+  <div class="mb-6">
+    <p class="mb-3">You can find me on these platforms:</p>
+    <div class="flex flex-wrap items-center gap-4 mt-2">
+      <a href="https://www.linkedin.com/in/falahnzk/" 
+         class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-lg" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <span>
+          <img src="/icons/social/linkedin.svg" alt="LinkedIn" width="24" height="24" />
+        </span>
+        <span>LinkedIn</span>
+      </a>
+      
+      <a href="https://github.com/lexciese" 
+         class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-lg" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <span>
+          <img src="/icons/social/github.svg" alt="GitHub" width="24" height="24" />
+        </span>
+        <span>GitHub</span>
+      </a>
+      
+      <a href="https://www.instagram.com/lexciese/" 
+         class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-lg" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <span>
+          <img src="/icons/social/instagram.svg" alt="Instagram" width="24" height="24" />
+        </span>
+        <span>Instagram</span>
+      </a>
+    </div>
+    
+    <div class="mt-4">
+      <p class="text-sm text-muted-foreground">
+        Electronics and Instrumentation undergrad student @ Universitas Gadjah Mada<br>
+        Humanoid motion programmer at Altair Gadjah Mada Robotic Team<br>
+        <strong>Email:</strong> falahnzk@gmail.com
+      </p>
+    </div>
+  </div>
+  
   <h2 id='common-links'>Common Links</h2>
   <FriendList list={friends[0]} />
-  <Collapse title='Links with Bad Status'>
-    <FriendList list={friends[1]} />
-  </Collapse>
-  <Collapse title='Link History Book'>
-    <Timeline events={linksConf.logbook} />
-  </Collapse>
+  
   <h2 id='special-links'>Special Links</h2>
-  <FriendList list={friends[2]} />
+  <FriendList list={friends[1]} />
 
   <!-- apply-links -->
   <h2 id='apply-links'>Apply Links</h2>
-  <p>本站信息如下（点击快速复制）：</p>
+  <p>Site information below (click to copy):</p>
   <blockquote class='not-prose grid grid-cols-[auto_1fr] gap-x-2 break-words border-s-4 ps-4'>
     {
       linksConf.applyTip.map(({ name, val }) => {
@@ -49,16 +90,5 @@ const linksConf = config.integ.links
     }
   </blockquote>
 
-  <p>
-    申请时还请按照这个模板留言（<a
-      href='https://github.com/cworld1/astro-theme-pure/blob/main/public/links.json'
-      target='_blank'>提交 PR</a
-    > 或许也是个更快的办法）。此外有关申请说明：
-  </p>
-  <ul>
-    <li>在你的友链上添加了本站；</li>
-    <li>请确保你的站点活着；</li>
-    <li>博客内容不违反国家法律。</li>
-  </ul>
   <Comment slot='bottom' />
 </PageLayout>
