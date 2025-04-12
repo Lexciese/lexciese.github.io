@@ -67,7 +67,7 @@ export const theme: ThemeUserConfig = {
     /** Optional details about the social media accounts for this site. */
     social: { 
       github: 'https://github.com/Lexciese',
-      email: 'falahnzk@gmail.com' // Replace with your actual email
+      email: 'mailto:falahnzk@gmail.com' // Replace with your actual email
     }
   },
 
