@@ -1,0 +1,44 @@
+---
+import config from '../site.config'
+
+const { class: className } = Astro.props
+---
+
+{
+  config.integ.giscus.enable && (
+    <div id="giscus-container" class={className}></div>
+  )
+}
+
+<script>
+  import config from '../site.config'
+
+  // Only load if giscus is enabled
+  if (config.integ.giscus?.enable) {
+    const giscusConfig = config.integ.giscus;
+    
+    // Create script element
+    const script = document.createElement('script');
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", giscusConfig.repo);
+    script.setAttribute("data-repo-id", giscusConfig.repoId);
+    script.setAttribute("data-category", giscusConfig.category);
+    script.setAttribute("data-category-id", giscusConfig.categoryId);
+    script.setAttribute("data-mapping", giscusConfig.mapping);
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", giscusConfig.reactionsEnabled);
+    script.setAttribute("data-emit-metadata", giscusConfig.emitMetadata);
+    script.setAttribute("data-input-position", giscusConfig.inputPosition);
+    script.setAttribute("data-theme", document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    script.setAttribute("data-lang", giscusConfig.lang);
+    script.setAttribute("data-loading", "lazy");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+    
+    // Add script to container
+    const container = document.getElementById('giscus-container');
+    if (container) {
+      container.appendChild(script);
+    }
+  }
+</script>
