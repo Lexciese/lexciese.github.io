@@ -52,30 +52,6 @@ export const IntegrationConfigSchema = () =>
       emoji: z.array(z.string()).optional(),
       /** Additional configurations for the Waline comment system. */
       additionalConfigs: z.record(z.string(), z.any()).default({})
-    }),
-    
-    /** The Giscus comment system */
-    giscus: z.object({
-      /** Enable the Giscus comment system. */
-      enable: z.boolean().default(false),
-      /** The GitHub repository to use for comments. */
-      repo: z.string(),
-      /** The repository ID. */
-      repoId: z.string(),
-      /** The discussion category name. */
-      category: z.string(),
-      /** The discussion category ID. */
-      categoryId: z.string(),
-      /** The mapping between the current page and GitHub discussion. */
-      mapping: z.string().default('pathname'),
-      /** Whether to enable reactions for the comments. */
-      reactionsEnabled: z.string().default('1'),
-      /** Whether the metadata should be sent to the parent window. */
-      emitMetadata: z.string().default('0'),
-      /** Where the comment box should be placed. */
-      inputPosition: z.string().default('top'),
-      /** The language Giscus should use. */
-      lang: z.string().default('en')
     })
   })
 

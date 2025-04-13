@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets'
-import { Spoiler, Timeline, Button, Collapse } from 'astro-pure/user'
+import { Comment } from 'astro-pure/advanced'
+import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
-import GiscusComment from '@/components/GiscusComment.astro'
 
 import avatar from '@/assets/avatar.png'
 import github from '@/assets/icons/social/github.svg'
@@ -147,7 +147,7 @@ const headings = [
     <li>
       Site hosting: <a href='https://github.com/Lexciese/lexciese.github.io' target='_blank'>GitHub Pages</a>
     </li>
-    <li>Comment system: <a href='https://giscus.app/' target='_blank'>Giscus</a></li>
+    <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li>
   </ul>
-  <GiscusComment slot='bottom' />
+  <Comment slot='bottom' />
 </PageLayout>

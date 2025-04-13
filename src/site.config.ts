@@ -127,14 +127,14 @@ export const integ: IntegrationUserConfig = {
   },
   // Comment system
   waline: {
-    enable: false, // Disabled - not suitable for static sites on GitHub Pages
+    enable: false,
     // Server service link - you need to set up your own Waline server
     // Follow the guide at https://waline.js.org/en/guide/get-started.html
     // Quick deploy options:
     // - Vercel: https://waline.js.org/en/guide/get-started.html#vercel-deploy
     // - Netlify: https://waline.js.org/en/guide/get-started.html#netlify-deploy
     // After deployment, replace this URL with your own Waline server URL
-    server: '',
+    server: 'YOUR_WALINE_SERVER_URL_HERE',
     // Refer https://waline.js.org/en/guide/features/emoji.html
     emoji: ['bmoji', 'weibo'],
     // Refer https://waline.js.org/en/reference/client/props.html
@@ -148,21 +148,6 @@ export const integ: IntegrationUserConfig = {
       },
       imageUploader: false
     }
-  },
-  // Giscus comment system - uses GitHub Discussions as backend
-  // Learn more and get your settings at https://giscus.app/
-  giscus: {
-    enable: true,
-    // Fill in the following values from https://giscus.app/
-    repo: 'Lexciese/lexciese.github.io',
-    repoId: 'R_kgDOOYZ11g',
-    category: 'Q&A',
-    categoryId: 'DIC_kwDOOYZ11s4CpC8b',
-    mapping: 'pathname',
-    reactionsEnabled: '1',
-    emitMetadata: '0',
-    inputPosition: 'bottom',
-    lang: 'en'
   }
 }
 

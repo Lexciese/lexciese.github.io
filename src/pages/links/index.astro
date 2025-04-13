@@ -2,10 +2,10 @@
 import links from 'public/links.json'
 import config from 'virtual:config'
 
+import { Comment } from 'astro-pure/advanced'
 import { Collapse, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
-import GiscusComment from '@/components/GiscusComment.astro'
 
 const headings = [
   { depth: 2, slug: 'professional', text: 'Professional' },
@@ -90,5 +90,5 @@ const linksConf = config.integ.links
     }
   </blockquote>
 
-  <GiscusComment slot='bottom' />
+  <Comment slot='bottom' />
 </PageLayout>
