@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "blog-2974b"
-  }
+  },
+  "targets": {
+    "blog-2974b": {
+      "hosting": {
+        "main-site": [
+          "falahnaufalzaki"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
